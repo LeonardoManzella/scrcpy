@@ -384,4 +384,4 @@ Read the [developers page].
 
 [article-intro]: https://blog.rom1v.com/2018/03/introducing-scrcpy/
 [article-tcpip]: https://www.genymotion.com/blog/open-source-project-scrcpy-now-works-wirelessly/
-[article-fiex]:  https://www.cnx-software.com/2018/03/10/scrcpy-open-source-software-let-you-control-an-android-phone-via-a-windows-mac-os-or-linux-pc/
+[article-fixes]: https://www.cnx-software.com/2018/03/10/scrcpy-open-source-software-let-you-control-an-android-phone-via-a-windows-mac-os-or-linux-pc/
