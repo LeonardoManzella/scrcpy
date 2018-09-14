@@ -69,6 +69,7 @@ SDL_bool installer_init(struct installer *installer, const char *serial) {
         installer->serial = SDL_strdup(serial);
         if (!installer->serial) {
             LOGW("Cannot strdup serial");
+            SDL_DestroyMutex(installer->mutex);
             return SDL_FALSE;
         }
     } else {
@@ -79,6 +80,8 @@ SDL_bool installer_init(struct installer *installer, const char *serial) {
     installer->initialized = SDL_FALSE;
 
     installer->stopped = SDL_FALSE;
+    installer->current_process = PROCESS_NONE;
+
     return SDL_TRUE;
 }
 
@@ -115,6 +118,7 @@ static int run_installer(void *data) {
 
     for (;;) {
         mutex_lock(installer->mutex);
+        installer->current_process = PROCESS_NONE;
         while (!installer->stopped && apk_queue_is_empty(&installer->queue)) {
             cond_wait(installer->event_cond, installer->mutex);
         }
