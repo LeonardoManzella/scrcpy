@@ -312,6 +312,12 @@ To show physical touches while scrcpy is running:
 scrcpy -t
 ```
 
+The app may be started directly in fullscreen:
+
+```
+scrcpy -f
+```
+
 To run without installing:
 
 ```bash
@@ -339,6 +345,7 @@ To run without installing:
  | paste computer clipboard to device     | `Ctrl`+`v`                    |
  | enable/disable FPS counter (on stdout) | `Ctrl`+`i`                    |
  | install APK from computer              | drag & drop APK file          |
+ | push file to `/sdcard/`                | drag & drop non-APK file      |
 
 _¹Double-click on black borders to remove them._  
 _²Right-click turns the screen on if it was off, presses BACK otherwise._
